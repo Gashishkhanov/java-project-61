@@ -1,7 +1,13 @@
 package hexlet.code;
 
 public class Cli {
-    public static String getName(String name){
-        return "Hello, " + name;
+    private String name;
+
+    public Cli(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
     }
 }
