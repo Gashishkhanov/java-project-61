@@ -2,6 +2,7 @@ plugins {
     id("java")
     application
     kotlin("jvm")
+    checkstyle
 }
 
 application { mainClass.set("hexlet.code.App") }
@@ -25,8 +26,4 @@ tasks.test {
 
 tasks.getByName("run", JavaExec::class) {
     standardInput = System.`in`
-}
-
-plugins {
-    checkstyle
 }
