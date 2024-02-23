@@ -31,4 +31,13 @@ public class Engine {
         var randomElement = operator.get(random.nextInt(operator.size()));
         return randomElement;
     }
+
+    public static int gcd(int a,int b) {
+        while (b !=0) {
+            int tmp = a%b;
+            a = b;
+            b = tmp;
+        }
+        return a;
+    }
 }

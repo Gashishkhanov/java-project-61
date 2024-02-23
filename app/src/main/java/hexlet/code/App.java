@@ -11,6 +11,7 @@ public class App {
         System.out.println("1 - Greet");
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
+        System.out.println("4 - GCD");
         System.out.println("0 - Exit");
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Your choice: ");
@@ -135,7 +136,46 @@ public class App {
             System.out.println("Congratulations, " + client.getName() + "!");
         }
 
-        //следующая игра...
+        //проверка на вход в НОД
+        if (pointEnter == 4) {
+            System.out.println("Welcome to the Brain Games!");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("May I have your name?");
+            var client = new Cli(scanner.nextLine());
+            System.out.println("Hello, " + client.getName() + "!");
 
+
+            //НОД
+            System.out.println("Find the greatest common divisor of given numbers.");
+            var count = 0;
+            while (count < 3){
+                //первый случайный операнд
+                int minValue = 1;
+                int maxValue = 50;
+                int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
+                //второй случайный операнд
+                int minValue1 = 1;
+                int maxValue1 = 50;
+                int randomValue1 = minValue1 + (int) (Math.random() * (maxValue1 - minValue1 + 1));
+
+                System.out.println("Question: " + randomValue + " " + randomValue1);
+                Scanner scanner3 = new Scanner(System.in);
+                System.out.println("Your answer: ");
+                int answer2 = scanner3.nextInt();
+
+                var correct = Engine.gcd(randomValue, randomValue1);
+                if (answer2 == correct){
+                    System.out.println("Correct!");
+                    count++;
+                }
+                else {
+                    System.out.println(answer2 + " is wrong answer ;(. Correct answer was " + correct);
+                    System.out.println("Let's try again, " + client.getName() + "!");
+                    count = 0;
+                }
+
+                System.out.println("Congratulations, " + client.getName() + "!");
+            }
+        }
     }
 }
