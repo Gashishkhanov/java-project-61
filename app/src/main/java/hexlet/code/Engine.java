@@ -4,32 +4,14 @@ import java.security.SecureRandom;
 import java.util.Arrays;
 
 public class Engine {
-    public static int getRandomValueFrom1to100(){
-        int minValue = 1;
-        int maxValue = 100;
-        int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
-        return randomValue;
+    public static int getRandomValue(int minValue, int maxValue){
+        return minValue + (int) (Math.random() * (maxValue - minValue + 1));
     }
 
-    public static int getRandomValueFrom1to50(){
-        int minValue = 1;
-        int maxValue = 50;
-        int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
-        return randomValue;
-    }
-
-    public static int getRandomValueFrom1to9(){
-        int minValue = 1;
-        int maxValue = 9;
-        int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
-        return randomValue;
-    }
-
-    public static String getRandomOperator(){
+    public static String getRandomOperator(String oper, String oper1){
         var random = new SecureRandom();
-        var operator = Arrays.asList("+", "*");
-        var randomElement = operator.get(random.nextInt(operator.size()));
-        return randomElement;
+        var operator = Arrays.asList(oper, oper1);
+        return operator.get(random.nextInt(operator.size()));
     }
 
     public static int gcd(int a,int b) {

@@ -1,6 +1,4 @@
 package hexlet.code;
-import java.security.SecureRandom;
-import java.util.Arrays;
 import java.util.Scanner;
 
 public class App {
@@ -39,9 +37,7 @@ public class App {
             System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
             var count = 0;
             while (count < 3) {
-                int minValue = 1;
-                int maxValue = 100;
-                int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
+                var randomValue = Engine.getRandomValue(1, 100);
                 System.out.println("Questiom: " + randomValue);
                 Scanner scanner2 = new Scanner(System.in);
                 System.out.println("Your answer: ");
@@ -88,45 +84,36 @@ public class App {
             System.out.println("What is the result of the expression?");
             var count = 0;
             while (count < 3) {
-                //первый случайный операнд
-                int minValue = 1;
-                int maxValue = 50;
-                int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
-                //второй случайный операнд
-                int minValue1 = 1;
-                int maxValue1 = 9;
-                int randomValue1 = minValue1 + (int) (Math.random() * (maxValue1 - minValue1 + 1));
-                //случайный оператор
-                var random = new SecureRandom();
-                var operator = Arrays.asList("+", "*");
-                var randomElement = operator.get(random.nextInt(operator.size()));
+                var a = Engine.getRandomValue(1, 50);
+                var b = Engine.getRandomValue(1, 9);
+                var randomOperator = Engine.getRandomOperator("+", "*");
 
-                System.out.println("Questiom: " + randomValue + " " + randomElement + " " + randomValue1);
+                System.out.println("Questiom: " + a + " " + randomOperator + " " + b);
                 Scanner scanner3 = new Scanner(System.in);
                 System.out.println("Your answer: ");
-                int answer2 = scanner3.nextInt();
+                int answer = scanner3.nextInt();
 
                 //отработка правильных\неправильных ответов
-                if (randomElement.equals("+")){
-                    int expr = randomValue + randomValue1;
-                    if (answer2 == expr){
+                if (randomOperator.equals("+")){
+                    int expr = a + b;
+                    if (answer == expr){
                         System.out.println("Correct!");
                         count++;
                     }
                     else {
-                        System.out.println(answer2 + " is wrong answer ;(. Correct answer was " + expr);
+                        System.out.println(answer + " is wrong answer ;(. Correct answer was " + expr);
                         System.out.println("Let's try again, " + client.getName() + "!");
                         count = 0;
                     }
                 }
-                if (randomElement.equals("*")) {
-                    int expr = randomValue * randomValue1;
-                    if (answer2 == expr){
+                if (randomOperator.equals("*")) {
+                    int expr = a * b;
+                    if (answer == expr){
                         System.out.println("Correct!");
                         count++;
                     }
                     else {
-                        System.out.println(answer2 + " is wrong answer ;(. Correct answer was " + expr);
+                        System.out.println(answer + " is wrong answer ;(. Correct answer was " + expr);
                         System.out.println("Let's try again, " + client.getName() + "!");
                         count = 0;
                     }
@@ -149,21 +136,15 @@ public class App {
             System.out.println("Find the greatest common divisor of given numbers.");
             var count = 0;
             while (count < 3){
-                //первый случайный операнд
-                int minValue = 1;
-                int maxValue = 50;
-                int randomValue = minValue + (int) (Math.random() * (maxValue - minValue + 1));
-                //второй случайный операнд
-                int minValue1 = 1;
-                int maxValue1 = 50;
-                int randomValue1 = minValue1 + (int) (Math.random() * (maxValue1 - minValue1 + 1));
+                var a = Engine.getRandomValue(1, 50);
+                var b = Engine.getRandomValue(1, 50);
 
-                System.out.println("Question: " + randomValue + " " + randomValue1);
-                Scanner scanner3 = new Scanner(System.in);
+                System.out.println("Question: " + a + " " + b);
+                Scanner scanner2 = new Scanner(System.in);
                 System.out.println("Your answer: ");
-                int answer2 = scanner3.nextInt();
+                int answer2 = scanner2.nextInt();
 
-                var correct = Engine.gcd(randomValue, randomValue1);
+                var correct = Engine.gcd(a, b);
                 if (answer2 == correct){
                     System.out.println("Correct!");
                     count++;
@@ -177,5 +158,7 @@ public class App {
                 System.out.println("Congratulations, " + client.getName() + "!");
             }
         }
+
+
     }
 }
