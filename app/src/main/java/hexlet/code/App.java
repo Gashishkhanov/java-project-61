@@ -1,4 +1,5 @@
 package hexlet.code;
+import java.util.ArrayList;
 import java.util.Scanner;
 
 public class App {
@@ -10,6 +11,7 @@ public class App {
         System.out.println("2 - Even");
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
+        System.out.println("5 - Progression");
         System.out.println("0 - Exit");
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Your choice: ");
@@ -159,6 +161,39 @@ public class App {
             }
         }
 
+        //Проверка на вход в Арифметическую прогрессию
+        if (pointEnter == 5){
+            System.out.println("Welcome to the Brain Games!");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("May I have your name?");
+            var client = new Cli(scanner.nextLine());
+            System.out.println("Hello, " + client.getName() + "!");
 
+
+            //Арифметическая прогрессия
+            System.out.println("What number is missing in the progression?");
+            var count = 0;
+            while (count < 3){
+                var d = Engine.getRandomValue(1, 10);
+                var index = Engine.getRandomValue(0, 9);
+                var progression = Engine.getProgression(d);
+                var element = progression.get(index);
+                System.out.println("Question: " + Engine.getProgressionWithBottoms(progression, index));
+                Scanner scanner2 = new Scanner(System.in);
+                System.out.println("Your answer: ");
+                String answer2 = scanner2.nextLine();
+                if (answer2.equals(element)){
+                    System.out.println("Correct!");
+                    count++;
+                }
+                else {
+                    System.out.println(answer2 + " is wrong answer ;(. Correct answer was " + element);
+                    count = 0;
+                }
+
+            }
+
+            System.out.println("Congratulations, " + client.getName() + "!");
+        }
     }
 }
