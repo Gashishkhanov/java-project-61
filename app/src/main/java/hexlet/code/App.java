@@ -12,7 +12,9 @@ public class App {
         System.out.println("3 - Calc");
         System.out.println("4 - GCD");
         System.out.println("5 - Progression");
+        System.out.println("6 - Prime");
         System.out.println("0 - Exit");
+
         Scanner scanner1 = new Scanner(System.in);
         System.out.println("Your choice: ");
         int pointEnter = scanner1.nextInt();
@@ -161,6 +163,7 @@ public class App {
             }
         }
 
+
         //Проверка на вход в Арифметическую прогрессию
         if (pointEnter == 5){
             System.out.println("Welcome to the Brain Games!");
@@ -194,6 +197,50 @@ public class App {
             }
 
             System.out.println("Congratulations, " + client.getName() + "!");
+        }
+
+
+        //Проверка входа в Простое число
+        if (pointEnter == 6){
+            System.out.println("Welcome to the Brain Games!");
+            Scanner scanner = new Scanner(System.in);
+            System.out.println("May I have your name?");
+            var client = new Cli(scanner.nextLine());
+            System.out.println("Hello, " + client.getName() + "!");
+
+
+            //Простое число
+            System.out.println("Answer 'yes' if given number is prime. Otherwise answer 'no'.");
+            var count = 0;
+            while (count < 3){
+                int randomValue = Engine.getRandomValue(1, 100);
+                System.out.println("Question: " + randomValue);
+                Scanner scanner2 = new Scanner(System.in);
+                System.out.println("Your answer: ");
+                String answer2 = scanner2.nextLine();
+
+                var realAnswer = Engine.isPrime(randomValue) ? "yes" : "no";
+                if(realAnswer.equals("yes") && answer2.equals("yes")){
+                    System.out.println("Correct!");
+                    count++;
+                }
+
+                else if(realAnswer.equals("no") && answer2.equals("no")){
+                    System.out.println("Correct!");
+                    count++;
+                }
+
+                else {
+                    System.out.println(answer2 + " is wrong answer ;(. Correct answer was " + realAnswer);
+                    count = 0;
+                }
+            }
+
+            System.out.println("Congratulations, " + client.getName() + "!");
+        }
+
+        if(pointEnter == 0){
+            System.out.println("Chao!");
         }
     }
 }

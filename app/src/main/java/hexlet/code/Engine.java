@@ -53,4 +53,25 @@ public class Engine {
         massString.set(index, "...");
         return massString;
     }
+
+    public static boolean isPrime(int numberToCheck){
+        int remainder;
+        boolean isPrime = true;
+
+        for (int i = 2; i <= numberToCheck / 2; i++) {
+            remainder = numberToCheck % i;
+
+            if (remainder == 0) {
+                isPrime = false;
+                break;
+            }
+        }
+
+        if (isPrime) {
+            return true;
+        }
+        else {
+            return false;
+        }
+    }
 }
