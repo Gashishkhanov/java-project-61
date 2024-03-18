@@ -3,8 +3,18 @@ package hexlet.code;
 import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.Scanner;
 
 public class Engine {
+
+    public static void getGreet(){
+        System.out.println("Welcome to the Brain Games!");
+        Scanner scanner = new Scanner(System.in);
+        System.out.println("May I have your name?");
+        var client = new Cli(scanner.nextLine());
+        System.out.println("Hello, " + client.getName() + "!");
+    }
+
     public static int getRandomValue(int minValue, int maxValue){
         return minValue + (int) (Math.random() * (maxValue - minValue + 1));
     }
