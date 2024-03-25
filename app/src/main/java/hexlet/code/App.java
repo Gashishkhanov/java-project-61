@@ -1,5 +1,6 @@
 package hexlet.code;
 import java.util.Scanner;
+import games.Even;
 
 public class App {
     public static void main(String[] args) {
@@ -22,15 +23,14 @@ public class App {
           Engine.getGreet();
         }
 
-        //Проверка входа в игру "четность нечетность"
-//        if (pointEnter == 2) {
-//            System.out.println("Welcome to the Brain Games!");
-//            Scanner scanner = new Scanner(System.in);
-//            System.out.println("May I have your name?");
-//            var client = new Cli(scanner.nextLine());
-//            System.out.println("Hello, " + client.getName() + "!");
-//
-//
+        if (pointEnter == 2){
+            Engine.getGreet();
+            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
+            Even.game();
+            System.out.println("Congratulations, ");
+
+        }
+
 //            // игра на четность
 //            System.out.println("Answer 'yes' if the number is even, otherwise answer 'no'.");
 //            var count = 0;
@@ -236,5 +236,5 @@ public class App {
 //        if(pointEnter == 0){
 //            System.out.println("Chao!");
 //        }
-//    }
-//}
+    }
+}
