@@ -43,46 +43,15 @@ public class Engine {
 
         System.out.println(rules);
 
-        var count = 0;
-        while (count < 3) {
-
-            System.out.println(rounds[0][0]);
+        for (int i =0; i<3; i++) {
+            System.out.println(rounds[i][0]);
             Scanner scan = new Scanner(System.in);
             String userAnswer = scan.nextLine();
-            if (userAnswer.equals(rounds[0][1])) {
+            if (userAnswer.equals(rounds[i][1])) {
                 System.out.println("Correct!");
-                count++;
-
-                System.out.println(rounds[1][0]);
-                Scanner scan1 = new Scanner(System.in);
-                String userAnswer1 = scan1.nextLine();
-                if (userAnswer1.equals(rounds[1][1])) {
-                    System.out.println("Correct!");
-                    count++;
-
-                    System.out.println(rounds[2][0]);
-                    Scanner scan2 = new Scanner(System.in);
-                    String userAnswer2 = scan2.nextLine();
-                    if (userAnswer2.equals(rounds[2][1])) {
-                        System.out.println("Correct!");
-                        count++;
-
-                    } else {
-                        count = 0;
-                        System.out.println(userAnswer2 + " is wrong answer ;( . Correct answer was " + rounds[2][1]);
-
-                    }
-
-                } else {
-                    count = 0;
-                    System.out.println(userAnswer1 + " is wrong answer ;( . Correct answer was " + rounds[1][1]);
-                }
-
             } else {
-                count = 0;
-                System.out.println(userAnswer + " is wrong answer ;( . Correct answer was " + rounds[0][1]);
+                System.out.println(userAnswer + " is wrong answer ;( . Correct answer was " + rounds[i][1]);
             }
-
         }
 
         System.out.println("Congratulations, " + Cli.getName() + "!");
