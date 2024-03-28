@@ -10,17 +10,17 @@ public class Even {
 
     public static String[][] generateRounds(){
 
-        int a = Engine.generateRandomValue(1, 100);
-        int b = Engine.generateRandomValue(1, 100);
-        int c = Engine.generateRandomValue(1, 100);
+        var a = Engine.generateRandomValue(1, 100);
+        var b = Engine.generateRandomValue(1, 100);
+        var c = Engine.generateRandomValue(1, 100);
+
+        String question1 = "Question: " + a;
+        String question2 = "Question: " + b;
+        String question3 = "Question: " + c;
 
         String answer1 = a % 2 == 0 ? "yes" : "no";
         String answer2 = b % 2 == 0 ? "yes" : "no";
         String answer3 = c % 2 == 0 ? "yes" : "no";
-
-        String question1 = "Question: " + Integer.toString(a);
-        String question2 = "Question: " + Integer.toString(b);
-        String question3 = "Question: " + Integer.toString(c);
 
         String[][] mass = new String[3][2];
 
