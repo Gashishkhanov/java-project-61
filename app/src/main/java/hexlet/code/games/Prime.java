@@ -8,26 +8,24 @@ public class Prime {
     }
 
     public static String[][] generateRounds(){
-        var a1 = Engine.generateRandomValue(1,100);
-        var a2 = Engine.generateRandomValue(1,100);
-        var a3 = Engine.generateRandomValue(1,100);
+        String[][] mass = new String[3][];
 
-        String question1 = "Question: " + a1;
-        String question2 = "Question: " + a2;
-        String question3 = "Question: " + a3;
+        mass[0] = generateRoundData();
+        mass[1] = generateRoundData();
+        mass[2] = generateRoundData();
 
-        String answer1 = isPrime(a1) ? "yes" : "no";
-        String answer2 = isPrime(a2) ? "yes" : "no";
-        String answer3 = isPrime(a3) ? "yes" : "no";
+        return mass;
+    }
 
-        String[][] mass = new String[3][2];
+    public static String[] generateRoundData(){
+        var a = Engine.generateRandomValue(1,100);
 
-        mass[0][0] = question1;
-        mass[0][1] = answer1;
-        mass[1][0] = question2;
-        mass[1][1] = answer2;
-        mass[2][0] = question3;
-        mass[2][1] = answer3;
+        String question = "Question: " + a;
+        String answer = isPrime(a) ? "yes" : "no";
+
+        String[] mass = new String[2];
+        mass[0] = question;
+        mass[1] = answer;
 
         return mass;
     }
@@ -45,11 +43,6 @@ public class Prime {
             }
         }
 
-        if (isPrime) {
-            return true;
-        }
-        else {
-            return false;
-        }
+        return isPrime;
     }
 }

@@ -8,31 +8,24 @@ public class GCD {
     }
 
     public static String[][] generateRounds(){
-        var a1 = Engine.generateRandomValue(1,50);
-        var b1 = Engine.generateRandomValue(1,50);
+        String[][] mass = new String[3][];
+        mass[0] = generateRoundDate();
+        mass[1] = generateRoundDate();
+        mass[2] = generateRoundDate();
 
-        var a2 = Engine.generateRandomValue(1,50);
-        var b2 = Engine.generateRandomValue(1,50);
+        return mass;
+    }
 
-        var a3 = Engine.generateRandomValue(1,50);
-        var b3 = Engine.generateRandomValue(1,50);
+    public static String[] generateRoundDate(){
+        var a = Engine.generateRandomValue(1,50);
+        var b = Engine.generateRandomValue(1,50);
 
-        String question1 = "Question: " + a1 + " " + b1;
-        String question2 = "Question: " + a2 + " " + b2;
-        String question3 = "Question: " + a3 + " " + b3;
+        String question = "Question: " + a + " " + b;
+        String answer = Integer.toString(gcd(a,b));
 
-        String answer1 = Integer.toString(gcd(a1,b2));
-        String answer2 = Integer.toString(gcd(a2,b2));
-        String answer3 = Integer.toString(gcd(a3,b3));
-
-        String[][] mass = new String[3][2];
-
-        mass[0][0] = question1;
-        mass[0][1] = answer1;
-        mass[1][0] = question2;
-        mass[1][1] = answer2;
-        mass[2][0] = question3;
-        mass[2][1] = answer3;
+        String[] mass = new String[2];
+        mass[0] = question;
+        mass[1] = answer;
 
         return mass;
     }

@@ -1,10 +1,5 @@
 package hexlet.code;
-
-import hexlet.code.games.*;
-
 import java.util.Scanner;
-
-import static hexlet.code.games.Even.generateRoundData;
 
 public class Engine {
 

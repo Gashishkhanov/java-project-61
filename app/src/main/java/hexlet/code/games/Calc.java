@@ -12,35 +12,28 @@ public class Calc {
     }
 
     public static String[][] generateRounds(){
-        var a1 = Engine.generateRandomValue(1, 50);
-        var b1 = Engine.generateRandomValue(1, 10);
-        var randomOperator1 = getRandomOperator("+", "*");
 
-        var a2 = Engine.generateRandomValue(1, 50);
-        var b2 = Engine.generateRandomValue(1, 10);
-        var randomOperator2 = getRandomOperator("+", "*");
+        String[][] mass = new String[3][];
 
-        var a3 = Engine.generateRandomValue(1, 50);
-        var b3 = Engine.generateRandomValue(1, 10);
-        var randomOperator3 = getRandomOperator("+", "*");
+        mass[0] = generateRoundData();
+        mass[1] = generateRoundData();
+        mass[2] = generateRoundData();
 
+        return mass;
+    }
 
-        String question1 = "Question: " + a1 + " " + randomOperator1 + " " + b1;
-        String question2 = "Question: " + a2 + " " + randomOperator2 + " " + b2;
-        String question3 = "Question: " + a3 + " " + randomOperator3 + " " + b3;
+    public static String[] generateRoundData(){
 
-        String answer1 = randomOperator1.equals("+") ? Integer.toString(a1 + b1) : Integer.toString(a1 * b1);
-        String answer2 = randomOperator2.equals("+") ? Integer.toString(a2 + b2) : Integer.toString(a2 * b2);
-        String answer3 = randomOperator3.equals("+") ? Integer.toString(a3 + b3) : Integer.toString(a3 * b3);
+        var a = Engine.generateRandomValue(1, 50);
+        var b = Engine.generateRandomValue(1, 10);
+        var randomOperator = getRandomOperator("+", "*");
 
-        String[][] mass = new String[3][2];
+        String question = "Question: " + a + " " + randomOperator + " " + b;
+        String answer = randomOperator.equals("+") ? Integer.toString(a + b) : Integer.toString(a * b);
 
-        mass[0][0] = question1;
-        mass[0][1] = answer1;
-        mass[1][0] = question2;
-        mass[1][1] = answer2;
-        mass[2][0] = question3;
-        mass[2][1] = answer3;
+        String[] mass = new String[2];
+        mass[0] = question;
+        mass[1] = answer;
 
         return mass;
     }
