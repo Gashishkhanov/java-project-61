@@ -1,4 +1,4 @@
-package games;
+package hexlet.code.games;
 
 import hexlet.code.Engine;
 
@@ -33,5 +33,15 @@ public class Even {
 
         return mass;
 
+    }
+
+    public static String[] generateRoundData(){
+        var a = Engine.generateRandomValue(1, 100);
+        String answer = a % 2 == 0 ? "yes" : "no";
+        String question = "Question: " + a;
+        String[] mass = new String[2];
+        mass[0] = question;
+        mass[1] = answer;
+        return mass;
     }
 }
