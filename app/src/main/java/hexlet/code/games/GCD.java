@@ -1,26 +1,25 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
 public class GCD {
-    public static String getRules(){
-        return "Find the greatest common divisor of given numbers.";
+
+    public static final String RULES = "Find the greatest common divisor of given numbers.";
+
+    public static void run(){
+        var rounds = new String[3][];
+        for (int i =0; i<3; i++) {
+            rounds[i] = generateRoundData();
+        }
+        Engine.run(rounds, RULES);
     }
 
-    public static String[][] generateRounds(){
-        String[][] mass = new String[3][];
-        mass[0] = generateRoundDate();
-        mass[1] = generateRoundDate();
-        mass[2] = generateRoundDate();
+    public static String[] generateRoundData(){
+        var a = Utils.generateRandomValue(1,50);
+        var b = Utils.generateRandomValue(1,50);
 
-        return mass;
-    }
-
-    public static String[] generateRoundDate(){
-        var a = Engine.generateRandomValue(1,50);
-        var b = Engine.generateRandomValue(1,50);
-
-        String question = "Question: " + a + " " + b;
+        String question = a + " " + b;
         String answer = Integer.toString(gcd(a,b));
 
         String[] mass = new String[2];

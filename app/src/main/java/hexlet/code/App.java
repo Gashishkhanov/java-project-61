@@ -1,7 +1,9 @@
 package hexlet.code;
+
 import hexlet.code.games.*;
+
 import java.util.Scanner;
-import static hexlet.code.Engine.run;
+
 
 public class App {
     public static void main(String[] args) {
@@ -27,27 +29,27 @@ public class App {
         switch (pe){
 
             case 1:
-                Cli.getGreet();
+                Cli.greet();
                 break;
 
             case 2:
-                run(Even.generateRounds(), Even.getRules());
+                Even.run();
                 break;
 
             case 3:
-                run(Calc.generateRounds(), Calc.getRules());
+                Calc.run();
                 break;
 
             case 4:
-                run(GCD.generateRounds(), GCD.getRules());
+                GCD.run();
                 break;
 
             case 5:
-                run(Progression.generateRounds(), Progression.getRules());
+                Progression.run();
                 break;
 
             case 6:
-                run(Prime.generateRounds(), Prime.getRules());
+                Prime.run();
                 break;
 
         }

@@ -1,52 +1,46 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+import hexlet.code.Utils;
 
-import java.util.ArrayList;
 
 public class Progression {
-    public static String getRules(){
-        return "What number is missing in the progression?";
-    }
 
-    public static String[][] generateRounds(){
-        String[][] mass = new String[3][];
+    public static final String RULES = "What number is missing in the progression?";
 
-        mass[0] = generateRoundData();
-        mass[1] = generateRoundData();
-        mass[2] = generateRoundData();
-
-        return mass;
+    public static void run(){
+        var rounds = new String[3][];
+        for (int i =0; i<3; i++) {
+            rounds[i] = generateRoundData();
+        }
+        Engine.run(rounds, RULES);
     }
 
     public static String[] generateRoundData(){
-        var d = Engine.generateRandomValue(1, 10);
-        var index = Engine.generateRandomValue(0, 9);
-        var progression = generateProgression(d);
-        var element = progression.get(index);
-
-        String question1 = "Question: " + getProgressionWithBottoms(progression, index);
+        var firstNumber = Utils.generateRandomValue(0, 100);
+        var progressionSize = Utils.generateRandomValue(4, 10);
+        var step = Utils.generateRandomValue(1, 10);
+        var index = Utils.generateRandomValue(0, progressionSize);
+        var progression = generateProgression(firstNumber, progressionSize, step);
+        var answer = progression[index];
+        progression[index] = "...";
+        var question = String.join(", ", progression);
 
         String[] mass = new String[2];
-        mass[0] = question1;
-        mass[1] = element;
+        mass[0] = question;
+        mass[1] = answer;
 
         return mass;
+
     }
 
-    public static ArrayList<String> generateProgression(int progression){
-        ArrayList<String> massString = new ArrayList<>();
-        var a = Engine.generateRandomValue(1,10);
-        massString.add(String.valueOf(a));
-        for (var i = 0; i < 9; i++){
-            a += progression;
-            massString.add(String.valueOf(a));
+    public static String[] generateProgression(int firstNumber, int progressionSize, int step){
+        var progression = new String[progressionSize];
+        progression[0] = Integer.toString(firstNumber);
+        for (var i = 1; i < progressionSize; i++){
+            firstNumber += step;
+            progression[i] = Integer.toString(firstNumber);
         }
-        return massString;
-    }
-
-    public static ArrayList<String> getProgressionWithBottoms(ArrayList<String> massString, int index){
-        massString.set(index, "...");
-        return massString;
+        return progression;
     }
 }
