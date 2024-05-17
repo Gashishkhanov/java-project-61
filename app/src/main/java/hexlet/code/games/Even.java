@@ -5,6 +5,7 @@ import hexlet.code.Utils;
 
 public class Even {
 
+    public static final int NUMBER_LIMIT = 100;
     public static final String RULES = "Answer 'yes' if the number is even, otherwise answer 'no'.";
 
     public static void run(){
@@ -16,16 +17,16 @@ public class Even {
     }
 
     public static String[] generateRoundData(){
-        var a = Utils.generateRandomValue(1, 100);
+        var a = Utils.generateRandomValue(1, NUMBER_LIMIT);
 
         String[] mass = new String[2];
         mass[0] = Integer.toString(a);
-        mass[1] = isEven(a);
+        mass[1] = isEven(a) ? "yes" : "no";
 
         return mass;
     }
 
-    public static String isEven(int a){
-        return a % 2 == 0 ? "yes" : "no";
+    public static boolean isEven(int a){
+        return a % 2 == 0;
     }
 }

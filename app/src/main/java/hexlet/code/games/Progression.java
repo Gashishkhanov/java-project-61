@@ -6,6 +6,11 @@ import hexlet.code.Utils;
 
 public class Progression {
 
+    public static final int FIRST_NUMBER_LIMIT = 100;
+    public static final int BOTTOM_SIZE_LIMIT_FROM = 5;
+    public static final int BOTTOM_SIZE_LIMIT_TO = 10;
+    public static final int STEP_LIMIT_TO = 10;
+
     public static final String RULES = "What number is missing in the progression?";
 
     public static void run(){
@@ -17,9 +22,11 @@ public class Progression {
     }
 
     public static String[] generateRoundData(){
-        var firstNumber = Utils.generateRandomValue(0, 100);
-        var progressionSize = Utils.generateRandomValue(5, 10);
-        var step = Utils.generateRandomValue(1, 10);
+
+        var firstNumber = Utils.generateRandomValue(0, FIRST_NUMBER_LIMIT);
+        var progressionSize = Utils.generateRandomValue(BOTTOM_SIZE_LIMIT_FROM, BOTTOM_SIZE_LIMIT_TO);
+        var step = Utils.generateRandomValue(1, STEP_LIMIT_TO);
+
         var index = Utils.generateRandomValue(0, progressionSize);
         var progression = generateProgression(firstNumber, progressionSize, step);
         var answer = progression[index];

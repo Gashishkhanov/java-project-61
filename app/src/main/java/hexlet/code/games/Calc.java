@@ -1,13 +1,13 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
-import hexlet.code.Utils;
-
-import java.security.SecureRandom;
-import java.util.Arrays;
+import static hexlet.code.Utils.generateRandomValue;
 
 public class Calc {
 
+    public static final char[] SYMBOLS = {'+', '*', '-'};
+    public static final int FIRST_NUMBER_LIMIT = 50;
+    public static final int SECOND_NUMBER_LIMIT = 10;
     public static final String RULES = "What is the result of the expression?";
 
     public static void run(){
@@ -20,17 +20,17 @@ public class Calc {
 
     public static String[] generateRoundData(){
 
-        var a = Utils.generateRandomValue(1, 50);
-        var b = Utils.generateRandomValue(1, 10);
-        var randomOperator = getRandomOperator("+", "*", "-");
+        var a = generateRandomValue(1, FIRST_NUMBER_LIMIT);
+        var b = generateRandomValue(1, SECOND_NUMBER_LIMIT);
+        var index = generateRandomValue(0, SYMBOLS.length);
 
-        String question = a + " " + randomOperator + " " + b;
+        String question = a + " " + SYMBOLS[index] + " " + b;
 
-        String answer = switch (randomOperator) {
-            case "+" -> Integer.toString(a + b);
-            case "*" -> Integer.toString(a * b);
-            case "-" -> Integer.toString(a - b);
-            default -> "";
+        String answer = switch (index) {
+            case 0 -> Integer.toString(a + b);
+            case 1 -> Integer.toString(a * b);
+            case 2 -> Integer.toString(a - b);
+            default -> throw new RuntimeException("Опрератор неопределен!");
         };
 
         String[] mass = new String[2];
@@ -38,11 +38,5 @@ public class Calc {
         mass[1] = answer;
 
         return mass;
-    }
-
-    public static String getRandomOperator(String oper, String oper1, String oper2){
-        var random = new SecureRandom();
-        var operator = Arrays.asList(oper, oper1, oper2);
-        return operator.get(random.nextInt(operator.size()));
     }
 }

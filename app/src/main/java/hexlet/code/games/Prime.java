@@ -5,6 +5,8 @@ import hexlet.code.Utils;
 
 public class Prime {
 
+    public static final int NUMBER_LIMIT = 100;
+
     public static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void run(){
@@ -16,7 +18,7 @@ public class Prime {
     }
 
     public static String[] generateRoundData(){
-        var a = Utils.generateRandomValue(1,100);
+        var a = Utils.generateRandomValue(1, NUMBER_LIMIT);
 
         String answer = isPrime(a) ? "yes" : "no";
 

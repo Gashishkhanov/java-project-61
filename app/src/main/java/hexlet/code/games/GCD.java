@@ -5,6 +5,8 @@ import hexlet.code.Utils;
 
 public class GCD {
 
+    public static final int NUMBER_LIMIT = 50;
+
     public static final String RULES = "Find the greatest common divisor of given numbers.";
 
     public static void run(){
@@ -16,8 +18,8 @@ public class GCD {
     }
 
     public static String[] generateRoundData(){
-        var a = Utils.generateRandomValue(1,50);
-        var b = Utils.generateRandomValue(1,50);
+        var a = Utils.generateRandomValue(1, NUMBER_LIMIT);
+        var b = Utils.generateRandomValue(1, NUMBER_LIMIT);
 
         String question = a + " " + b;
         String answer = Integer.toString(gcd(a,b));
