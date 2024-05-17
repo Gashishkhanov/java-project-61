@@ -9,7 +9,7 @@ public class GCD {
 
     public static void run(){
         var rounds = new String[3][];
-        for (int i =0; i<3; i++) {
+        for (int i =0; i<Engine.GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
         }
         Engine.run(rounds, RULES);

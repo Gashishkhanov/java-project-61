@@ -10,7 +10,7 @@ public class Progression {
 
     public static void run(){
         var rounds = new String[3][];
-        for (int i =0; i<3; i++) {
+        for (int i =0; i<Engine.GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
         }
         Engine.run(rounds, RULES);
@@ -18,13 +18,13 @@ public class Progression {
 
     public static String[] generateRoundData(){
         var firstNumber = Utils.generateRandomValue(0, 100);
-        var progressionSize = Utils.generateRandomValue(4, 10);
+        var progressionSize = Utils.generateRandomValue(5, 10);
         var step = Utils.generateRandomValue(1, 10);
         var index = Utils.generateRandomValue(0, progressionSize);
         var progression = generateProgression(firstNumber, progressionSize, step);
         var answer = progression[index];
-        progression[index] = "...";
-        var question = String.join(", ", progression);
+        progression[index] = "..";
+        var question = String.join(" ", progression);
 
         String[] mass = new String[2];
         mass[0] = question;

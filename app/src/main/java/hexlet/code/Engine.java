@@ -9,18 +9,19 @@ public class Engine {
 
         System.out.println(rules);
 
-        for (int i =0; i<3; i++) {
-            System.out.println("Question: " + rounds[i][0]);
+        for (String[] round: rounds){
+            System.out.println("Question: " + round[0]);
             Scanner scan = new Scanner(System.in);
             String userAnswer = scan.nextLine();
-            if (userAnswer.equals(rounds[i][1])) {
+            if (userAnswer.equals(round[1])) {
                 System.out.println("Correct!");
             } else {
-                System.out.println(userAnswer + " is wrong answer ;( . Correct answer was " + rounds[i][1]);
+                System.out.println(userAnswer + " is wrong answer ;( . Correct answer was " + round[1]);
                 System.out.println("Let's try again, " + name + "!");
                 return;
             }
         }
         System.out.println("Congratulations, " + name + "!");
     }
+    public static final int GENERAL_VALUE = 3;
 }
