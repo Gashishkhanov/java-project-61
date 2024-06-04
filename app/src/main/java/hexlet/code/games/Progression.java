@@ -27,7 +27,7 @@ public class Progression {
         var progressionSize = Utils.generateRandomValue(BOTTOM_SIZE_LIMIT_FROM, BOTTOM_SIZE_LIMIT_TO);
         var step = Utils.generateRandomValue(1, STEP_LIMIT_TO);
 
-        var index = Utils.generateRandomValue(0, progressionSize);
+        var index = Utils.generateRandomValue(0, progressionSize - 1);
         var progression = generateProgression(firstNumber, progressionSize, step);
         var answer = progression[index];
         progression[index] = "..";
