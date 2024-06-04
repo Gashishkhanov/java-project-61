@@ -22,7 +22,7 @@ public class Calc {
 
         var a = generateRandomValue(1, FIRST_NUMBER_LIMIT);
         var b = generateRandomValue(1, SECOND_NUMBER_LIMIT);
-        var index = generateRandomValue(0, SYMBOLS.length);
+        var index = generateRandomValue(0, SYMBOLS.length - 1);
 
         String question = a + " " + SYMBOLS[index] + " " + b;
 
