@@ -1,6 +1,8 @@
 package hexlet.code.games;
 
 import hexlet.code.Engine;
+
+import static hexlet.code.Engine.GENERAL_VALUE;
 import static hexlet.code.Utils.generateRandomValue;
 
 public class Calc {
@@ -10,15 +12,15 @@ public class Calc {
     public static final int SECOND_NUMBER_LIMIT = 10;
     public static final String RULES = "What is the result of the expression?";
 
-    public static void run(){
-        var rounds = new String[3][];
-        for (int i =0; i<Engine.GENERAL_VALUE; i++) {
+    public static void run() {
+        var rounds = new String[GENERAL_VALUE][];
+        for (int i = 0; i < GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
         }
         Engine.run(rounds, RULES);
     }
 
-    public static String[] generateRoundData(){
+    public static String[] generateRoundData() {
 
         var a = generateRandomValue(1, FIRST_NUMBER_LIMIT);
         var b = generateRandomValue(1, SECOND_NUMBER_LIMIT);

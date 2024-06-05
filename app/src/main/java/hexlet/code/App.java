@@ -25,7 +25,7 @@ public class App {
         runPointEnter(pointEnter);
     }
 
-    public static void runPointEnter(int pe){
+    public static void runPointEnter(int pe) {
         switch (pe){
 
             case 1:
@@ -52,6 +52,8 @@ public class App {
                 Prime.run();
                 break;
 
+            default:
+                throw new RuntimeException("Please choose a number from 1 to 7!");
         }
     }
 }

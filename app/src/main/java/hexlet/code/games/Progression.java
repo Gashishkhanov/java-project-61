@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.GENERAL_VALUE;
+
 
 public class Progression {
 
@@ -14,14 +16,14 @@ public class Progression {
     public static final String RULES = "What number is missing in the progression?";
 
     public static void run(){
-        var rounds = new String[3][];
-        for (int i =0; i<Engine.GENERAL_VALUE; i++) {
+        var rounds = new String[GENERAL_VALUE][];
+        for (int i = 0; i < GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
         }
         Engine.run(rounds, RULES);
     }
 
-    public static String[] generateRoundData(){
+    public static String[] generateRoundData() {
 
         var firstNumber = Utils.generateRandomValue(0, FIRST_NUMBER_LIMIT);
         var progressionSize = Utils.generateRandomValue(BOTTOM_SIZE_LIMIT_FROM, BOTTOM_SIZE_LIMIT_TO);
@@ -41,7 +43,7 @@ public class Progression {
 
     }
 
-    public static String[] generateProgression(int firstNumber, int progressionSize, int step){
+    public static String[] generateProgression(int firstNumber, int progressionSize, int step) {
         var progression = new String[progressionSize];
         progression[0] = Integer.toString(firstNumber);
         for (var i = 1; i < progressionSize; i++){

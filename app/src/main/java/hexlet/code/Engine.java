@@ -3,13 +3,13 @@ import java.util.Scanner;
 
 public class Engine {
 
-    public static void run(String[][] rounds, String rules){
+    public static void run(String[][] rounds, String rules) {
 
         var name = Cli.greet();
 
         System.out.println(rules);
 
-        for (String[] round: rounds){
+        for (String[] round: rounds) {
             System.out.println("Question: " + round[0]);
             Scanner scan = new Scanner(System.in);
             String userAnswer = scan.nextLine();

@@ -3,6 +3,8 @@ package hexlet.code.games;
 import hexlet.code.Engine;
 import hexlet.code.Utils;
 
+import static hexlet.code.Engine.GENERAL_VALUE;
+
 public class Prime {
 
     public static final int NUMBER_LIMIT = 100;
@@ -10,14 +12,14 @@ public class Prime {
     public static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
     public static void run(){
-        var rounds = new String[3][];
-        for (int i =0; i<Engine.GENERAL_VALUE; i++) {
+        var rounds = new String[GENERAL_VALUE][];
+        for (int i = 0; i < GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
         }
         Engine.run(rounds, RULES);
     }
 
-    public static String[] generateRoundData(){
+    public static String[] generateRoundData() {
         var a = Utils.generateRandomValue(1, NUMBER_LIMIT);
 
         String answer = isPrime(a) ? "yes" : "no";
@@ -29,7 +31,7 @@ public class Prime {
         return mass;
     }
 
-    public static boolean isPrime(int numberToCheck){
+    public static boolean isPrime(int numberToCheck) {
         int remainder;
         boolean isPrime = true;
 
