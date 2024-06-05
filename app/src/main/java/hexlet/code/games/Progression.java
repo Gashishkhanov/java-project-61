@@ -15,7 +15,7 @@ public class Progression {
 
     public static final String RULES = "What number is missing in the progression?";
 
-    public static void run(){
+    public static void run() {
         var rounds = new String[GENERAL_VALUE][];
         for (int i = 0; i < GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
@@ -46,7 +46,7 @@ public class Progression {
     public static String[] generateProgression(int firstNumber, int progressionSize, int step) {
         var progression = new String[progressionSize];
         progression[0] = Integer.toString(firstNumber);
-        for (var i = 1; i < progressionSize; i++){
+        for (var i = 1; i < progressionSize; i++) {
             firstNumber += step;
             progression[i] = Integer.toString(firstNumber);
         }

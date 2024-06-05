@@ -26,7 +26,7 @@ public class App {
     }
 
     public static void runPointEnter(int pe) {
-        switch (pe){
+        switch (pe) {
 
             case 1:
                 Cli.greet();

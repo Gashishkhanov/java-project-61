@@ -11,7 +11,7 @@ public class GCD {
 
     public static final String RULES = "Find the greatest common divisor of given numbers.";
 
-    public static void run(){
+    public static void run() {
         var rounds = new String[GENERAL_VALUE][];
         for (int i = 0; i < GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
@@ -24,7 +24,7 @@ public class GCD {
         var b = Utils.generateRandomValue(1, NUMBER_LIMIT);
 
         String question = a + " " + b;
-        String answer = Integer.toString(gcd(a,b));
+        String answer = Integer.toString(gcd(a, b));
 
         String[] mass = new String[2];
         mass[0] = question;

@@ -28,7 +28,7 @@ public class Even {
         return mass;
     }
 
-    public static boolean isEven(int a){
+    public static boolean isEven(int a) {
         return a % 2 == 0;
     }
 }

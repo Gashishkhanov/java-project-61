@@ -11,7 +11,7 @@ public class Prime {
 
     public static final String RULES = "Answer 'yes' if given number is prime. Otherwise answer 'no'.";
 
-    public static void run(){
+    public static void run() {
         var rounds = new String[GENERAL_VALUE][];
         for (int i = 0; i < GENERAL_VALUE; i++) {
             rounds[i] = generateRoundData();
