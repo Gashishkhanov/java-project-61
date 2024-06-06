@@ -1,6 +1,10 @@
 package hexlet.code;
 
-import hexlet.code.games.*;
+import hexlet.code.games.Calc;
+import hexlet.code.games.Even;
+import hexlet.code.games.GCD;
+import hexlet.code.games.Prime;
+import hexlet.code.games.Progression;
 
 import java.util.Scanner;
 
@@ -20,35 +24,35 @@ public class App {
 
         Scanner scanner = new Scanner(System.in);
         System.out.println("Your choice: ");
-        int pointEnter = scanner.nextInt();
+        String pointEnter = scanner.nextLine();
 
         runPointEnter(pointEnter);
     }
 
-    public static void runPointEnter(int pe) {
+    public static void runPointEnter(String pe) {
         switch (pe) {
 
-            case 1:
+            case "1":
                 Cli.greet();
                 break;
 
-            case 2:
+            case "2":
                 Even.run();
                 break;
 
-            case 3:
+            case "3":
                 Calc.run();
                 break;
 
-            case 4:
+            case "4":
                 GCD.run();
                 break;
 
-            case 5:
+            case "5":
                 Progression.run();
                 break;
 
-            case 6:
+            case "6":
                 Prime.run();
                 break;
 
