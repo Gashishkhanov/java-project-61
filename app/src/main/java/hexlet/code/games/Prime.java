@@ -32,6 +32,11 @@ public class Prime {
     }
 
     public static boolean isPrime(int numberToCheck) {
+
+        if (numberToCheck == 1) {
+            return false;
+        }
+
         int remainder;
         boolean isPrime = true;
 
