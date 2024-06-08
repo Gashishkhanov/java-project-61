@@ -29,8 +29,8 @@ public class App {
         runPointEnter(pointEnter);
     }
 
-    public static void runPointEnter(String pe) {
-        switch (pe) {
+    public static void runPointEnter(String pointEnter) {
+        switch (pointEnter) {
 
             case "1":
                 Cli.greet();

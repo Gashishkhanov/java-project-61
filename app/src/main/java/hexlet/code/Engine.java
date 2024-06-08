@@ -3,6 +3,8 @@ import java.util.Scanner;
 
 public class Engine {
 
+    public static final int GENERAL_VALUE = 3;
+
     public static void run(String[][] rounds, String rules) {
 
         var name = Cli.greet();
@@ -23,5 +25,4 @@ public class Engine {
         }
         System.out.println("Congratulations, " + name + "!");
     }
-    public static final int GENERAL_VALUE = 3;
 }
